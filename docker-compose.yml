@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: code-poker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:admin@db:5432/code-poker?schema=public
+    volumes:
+      - .:/app
+      - /app/node_modules # Evitar que seja sobrescrito pelo volume anterior
+    command: npm run start:dev
+
+volumes:
+  postgres_data:
