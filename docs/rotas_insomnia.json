@@ -1,0 +1,480 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-08-10T05:14:38.729Z",
+  "__export_source": "insomnia.desktop.app:v0.2.3-a",
+  "resources": [
+    {
+      "_id": "req_c30f6324f83f4fa4ba070122858b13c9",
+      "parentId": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "modified": 1723262490771,
+      "created": 1723262481398,
+      "url": "{{ _.baseUrl }}",
+      "name": "Rota de teste",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723234544425,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "7",
+          "disabled": false,
+          "id": "pair_3a49c9bb758e4909aa02cde4d550b0ebending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "parentId": null,
+      "modified": 1723234480694,
+      "created": 1723234480694,
+      "name": "Code-Poker API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_a9f91e31cd404e25a625246104188465",
+      "parentId": "fld_4960a81c8667491fb6ae44cecdfee48d",
+      "modified": 1723265542406,
+      "created": 1723265349791,
+      "url": "{{ _.baseUrl }}/rooms",
+      "name": "Create Room",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"room name test\",\n\t\"ownerId\": 7\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723265342355,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [],
+      "_type": "request"
+    },
+    {
+      "_id": "fld_4960a81c8667491fb6ae44cecdfee48d",
+      "parentId": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "modified": 1723265336460,
+      "created": 1723265333946,
+      "name": "Rooms",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1723234544375,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_2cec74051e844a488b279e6a59574b0f",
+      "parentId": "fld_4960a81c8667491fb6ae44cecdfee48d",
+      "modified": 1723266420391,
+      "created": 1723266117090,
+      "url": "{{ _.baseUrl }}/rooms/:userId",
+      "name": "FindAllByUser",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723249945480.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "userId",
+          "value": "7",
+          "disabled": false,
+          "id": "pair_021762bc7ecd4a6681e0a425b03bb88aending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_e0dc3cd6f79e406c80b6a3beb2d1714e",
+      "parentId": "fld_4960a81c8667491fb6ae44cecdfee48d",
+      "modified": 1723266532123,
+      "created": 1723266146643,
+      "url": "{{ _.baseUrl }}/rooms/:id",
+      "name": "Find Room",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723242247043.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "8",
+          "disabled": false,
+          "id": "pair_021762bc7ecd4a6681e0a425b03bb88aending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_fd6ba4f1b13b47f7839dd5e965751fee",
+      "parentId": "fld_4960a81c8667491fb6ae44cecdfee48d",
+      "modified": 1723266381153,
+      "created": 1723266279300,
+      "url": "{{ _.baseUrl }}/rooms/:id",
+      "name": "Delete Room",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": ""
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723238397824.625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "1",
+          "disabled": false,
+          "id": "pair_021762bc7ecd4a6681e0a425b03bb88aending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_84a326e0b30844feb2c3154538c2500b",
+      "parentId": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "modified": 1723262455725,
+      "created": 1723234481755,
+      "url": "{{ _.baseUrl }}/users",
+      "name": "Create User",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Josefino\",\n\t\"email\": \"josefino@testea.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1723234548606,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [],
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "parentId": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "modified": 1723234544325,
+      "created": 1723234544325,
+      "name": "Users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1723234544325,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_9780b27fae544ead9467df85864e10b5",
+      "parentId": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "modified": 1723262476132,
+      "created": 1723234815826,
+      "url": "{{ _.baseUrl }}/users/:id",
+      "name": "Find User",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Josefino\",\n\t\"email\": \"josefino@teste.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1722159899231.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "7",
+          "disabled": false,
+          "id": "pair_3a49c9bb758e4909aa02cde4d550b0ebending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_9b410da8e2d84ad78b1bd8676c6975fc",
+      "parentId": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "modified": 1723252183821,
+      "created": 1723237732208,
+      "url": "{{ _.baseUrl }}/users",
+      "name": "Find All User",
+      "description": "",
+      "method": "GET",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Josefino\",\n\t\"email\": \"josefino@teste.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1722025568059.6875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "1",
+          "disabled": false,
+          "id": "pair_3a49c9bb758e4909aa02cde4d550b0ebending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_473ae089453347b39744a1672a4182be",
+      "parentId": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "modified": 1723252184978,
+      "created": 1723237759888,
+      "url": "{{ _.baseUrl }}/users/:id",
+      "name": "Update User",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Josefino2\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1721958402473.7812,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "1",
+          "disabled": false,
+          "id": "pair_f4b9f09544964e2d9addb6bf185aaca2ending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_74b1b3f742594fd2aab33b2ecdc2b0e6",
+      "parentId": "fld_b13280345c5d4e9e8e9d553f3bc8a893",
+      "modified": 1723252179388,
+      "created": 1723237750708,
+      "url": "{{ _.baseUrl }}/users/:id",
+      "name": "Delete User",
+      "description": "",
+      "method": "DELETE",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Josefino\",\n\t\"email\": \"josefino@teste.com\",\n\t\"password\": \"123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnium/0.2.3-a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1721891236887.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "segmentParams": [
+        {
+          "name": "id",
+          "value": "2",
+          "disabled": false,
+          "id": "pair_3a49c9bb758e4909aa02cde4d550b0ebending0",
+          "fileName": ""
+        }
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "env_5a196035d96e3448b1a46fac2f8f968277e2e8bd",
+      "parentId": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "modified": 1723252170968,
+      "created": 1723234480698,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost:3000/api"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseUrl"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1723234480698,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_5a196035d96e3448b1a46fac2f8f968277e2e8bd",
+      "parentId": "wrk_799a9f0f1a1646cca4c7c485d2af9bc5",
+      "modified": 1723234480700,
+      "created": 1723234480700,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
