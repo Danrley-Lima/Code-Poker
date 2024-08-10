@@ -16,6 +16,69 @@ datasource db {
 model User {
   id        Int      @id @default(autoincrement())
   email     String   @unique
-  name      String
+  name      String?
+  password  String?
+  role      UserRole @default(GUEST)
   createdAt DateTime @default(now())
+  task      Task[]
+  vote      Vote[]
+}
+
+model Room {
+  id        Int        @id @default(autoincrement())
+  name      String?
+  roomCode  String     @unique
+  status    RoomStatus @default(OPEN)
+  createdAt DateTime   @default(now())
+  ownerId   Int
+  tasks     Task[]
+}
+
+model Task {
+  id          Int         @id @default(autoincrement())
+  title       String?
+  description String?
+  status      TaskStatus  @default(PENDING)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  userId      Int
+  user        User        @relation(fields: [userId], references: [id])
+  room        Room?       @relation(fields: [roomId], references: [id])
+  roomId      Int?
+  votes       VoteCount[]
+}
+
+model VoteCount {
+  id     Int  @id @default(autoincrement())
+  points Int
+  count  Int  @default(0)
+  task   Task @relation(fields: [taskId], references: [id])
+  taskId Int
+}
+
+model Vote {
+  id      Int      @id @default(autoincrement())
+  vote    Int
+  userId  Int
+  taskId  Int
+  votedAt DateTime @default(now())
+  user    User     @relation(fields: [userId], references: [id])
+}
+
+enum UserRole {
+  ADMIN
+  PARTICIPANT
+  GUEST
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum RoomStatus {
+  OPEN
+  IN_PROGRESS
+  CLOSED
 }
