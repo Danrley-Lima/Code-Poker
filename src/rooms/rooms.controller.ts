@@ -39,4 +39,9 @@ export class RoomsController {
   update(@Param('id') id: string, @Body() updateRoomDto: UpdateRoomDto) {
     return this.roomsService.update(+id, updateRoomDto);
   }
+
+  @Get(':roomId/tasks')
+  findTasks(@Param('roomId') id: string) {
+    return this.roomsService.findTasks(+id);
+  }
 }

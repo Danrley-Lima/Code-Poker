@@ -60,6 +60,14 @@ export class RoomsService {
     });
   }
 
+  async findTasks(roomsId: number) {
+    return this.prisma.task.findMany({
+      where: {
+        roomId: roomsId,
+      },
+    });
+  }
+
   private generateRoomCode(length: number = 6): string {
     const characters =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
