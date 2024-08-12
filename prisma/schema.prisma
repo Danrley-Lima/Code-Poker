@@ -43,9 +43,10 @@ model Task {
   updatedAt   DateTime    @updatedAt
   userId      Int
   user        User        @relation(fields: [userId], references: [id])
-  room        Room?       @relation(fields: [roomId], references: [id])
   roomId      Int?
-  votes       VoteCount[]
+  room        Room?       @relation(fields: [roomId], references: [id])
+  votes       VoteCount[] // Agregação de votos por pontos
+  vote        Vote[]
 }
 
 model VoteCount {
@@ -63,6 +64,9 @@ model Vote {
   taskId  Int
   votedAt DateTime @default(now())
   user    User     @relation(fields: [userId], references: [id])
+  task    Task     @relation(fields: [taskId], references: [id])
+
+  @@unique([userId, taskId]) // Índice único para evitar votos duplicados
 }
 
 enum UserRole {
